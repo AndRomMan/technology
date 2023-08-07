@@ -1,0 +1,58 @@
+{# макс длина desktop строки 44 символа #}
+{# макс длина mobile строки 34 символа #}
+
+{# #TIP: массив для тестирования работы слайд-баннера #}
+{# {% set header_banners = {
+  free_shipping: {
+    text_desktop: '🔥 Бесплатная доставка при заказе от 3 000 ₽',
+    text_mobile: '🔥 Бесплатная доставка от 3 000 ₽',
+    link: ''
+  },
+  gifts: {
+    text_desktop: '🎁 Новогодние подарки для бизнеса',
+    text_mobile: '🎁 Новогодние подарки для бизнеса',
+    link: 'https://shop.local/business'
+  },
+  delivery_gift: {
+    text_desktop: '&#127829; Подарки при заказе от 3 000 ₽',
+    text_mobile: '&#127829; Подарки от 3 000 ₽',
+    link: 'https://shop.local/business'
+  }
+} %} #}
+
+
+
+<div class="banners js-slider-aperture">
+  {% if header_banners %}
+    <ul class="banners__track js-banners__track js-banners__track-first">
+      {% for banner in header_banners %}
+        <li class="banners__item js-banners__item">
+          <a class="banners__link" {% if banner.link %} href="{{ banner.link }}" {% endif %} >
+            <span class="banners__content banners__content_desktop">
+              {{ banner.text_desktop }}
+            </span>
+            <span class="banners__content banners__content_mobile">
+              {{ banner.text_mobile }}
+            </span>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+
+    <ul class="banners__track js-banners__track js-banners__track-second">
+      {% for banner in header_banners %}
+        <li class="banners__item js-banners__item">
+          <a class="banners__link" {% if banner.link %} href="{{ banner.link }}" {% endif %} >
+            <span class="banners__content banners__content_desktop">
+              {{ banner.text_desktop }}
+            </span>
+            <span class="banners__content banners__content_mobile">
+              {{ banner.text_mobile }}
+            </span>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+</div>

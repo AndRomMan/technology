@@ -1,0 +1,190 @@
+====================================================================
+1 файл - head. twig
+
+  {# Метрики #}
+  {% include 'default/template/common/header_new/metrics/sentry.twig' %}
+  
+====================================================================
+2 файл - sentry.twig
+<!-- Sentry логирование ошибок https://docs.sentry.io -->
+{# {% if 'smysl' in route or 'dev' in route %} #}
+<script src="https://cdn.ravenjs.com/3.26.4/raven.min.js"
+  crossorigin="anonymous"></script>
+
+<script>
+  Raven.config("https://85ce3785f8664111b2e07cb226f52fd0@o55232.ingest.sentry.io/6547492").install();
+</script>
+{# {% endif %} #}
+
+====================================================================
+3 файл - ready.js
+$(document).ready(function () {
+
+  console.log('Sentry init:  https://docs.sentry.io/platforms/javascript/');
+
+  if (window.location.host === 'smysl.shop') {
+    Sentry.init({
+      dsn: 'https://85ce3785f8664111b2e07cb226f52fd0@o55232.ingest.sentry.io/6547492',
+      integrations: [new BrowserTracing()],
+    });
+  }
+
+
+====================================================================
+1
+Установка через npm
+npm install --save @sentry/browser @sentry/tracing
+
+
+2
+gulp.js
+
+    "@rollup/plugin-commonjs": "^22.0.2",
+    "@rollup/plugin-node-resolve": "^14.1.0",
+    "rollup": "^2.79.0",
+    npm install @rollup/plugin-terser --save-dev
+    
+
+// ========== javascript rollup bundling module ==========
+const rollup = require("rollup");
+const nodeResolve = require("@rollup/plugin-node-resolve");
+const commonjs = require("@rollup/plugin-commonjs");
+
+
+gulp.task("bundleSentry", function(done) {
+  rollupBundleSentry();
+  done();
+});
+
+function rollupBundleSentry() {
+  return rollup
+    .rollup({
+      input: paths.scripts + "/error-logging/sentry-index.js",
+      plugins: [nodeResolve.nodeResolve(), commonjs()],
+    })
+    .then((bundle) => {
+      return bundle.write({
+        file: paths.scripts + "/error-logging/" + "sentry.js",
+        format: "es",
+        // sourcemap: true,
+      });
+    });
+}
+
+// ========== ==========
+
+
+2
+Конфигурация
+Настройка должна происходить как можно раньше в жизненном цикле вашего приложения.
+
+Copied
+
+import * as Sentry from "@sentry/browser";
+import { BrowserTracing } from "@sentry/tracing";
+
+Sentry.init({dsn: "https://examplePublicKey@o0.ingest.sentry.io/0",
+
+  // Alternatively, use `process.env.npm_package_version` for a dynamic release version
+  // if your build tool supports it.
+  release: "my-project-name@2.3.12",
+  integrations: [new BrowserTracing()],
+
+  // Set tracesSampleRate to 1.0 to capture 100%
+  // of transactions for performance monitoring.
+  // We recommend adjusting this value in production
+  tracesSampleRate: 1.0,
+
+});
+
+3
+Проверка
+
+Этот фрагмент содержит преднамеренную ошибку, поэтому вы можете проверить, что все работает:
+myUndefinedFunction();
+
+4
+Для Edu
+
+<script
+  src="https://browser.sentry-cdn.com/7.19.0/bundle.tracing.min.js"
+  integrity="sha384-skDdPkdiECE8otf9rbWXqVqnroCJqPpFKjcjwdnnHD03cyVgxJxW9nJKq7uFEpld"
+  crossorigin="anonymous"
+></script>
+
+<script>
+    Sentry.init({
+        dsn: "https://dc822bd1c4af4edc9555c3db60c198a8@o55232.ingest.sentry.io/4504162667266048",
+        release: "np-education@1.0.0",
+        integrations: [new Sentry.BrowserTracing()],
+
+        // We recommend adjusting this value in production, or using tracesSampler
+        // for finer control
+        tracesSampleRate: 1.0,
+    });
+</script>
+
+
+подключение бандла
+wp-content/themes/td-edu/functions.php:167
+
+=====================================
+подключение Sentry на НП
+<head>
+
+    <!-- End Google Tag Manager -->
+	<?php /* add sentry for dev only https://pre.nuzhnapomosh.ru/ */
+		if (strpos($_SERVER['HTTP_HOST'], 'pre.') !== false): ?>
+		<script
+			src="https://browser.sentry-cdn.com/7.15.0/bundle.tracing.min.js"
+			integrity="sha384-skDdPkdiECE8otf9rbWXqVqnroCJqPpFKjcjwdnnHD03cyVgxJxW9nJKq7uFEpld"
+			crossorigin="anonymous"
+		></script>
+
+		<script>
+			Sentry.init({
+				dsn: "https://2ec7e18c247d4a1e8e92f4a86319927c@o55232.ingest.sentry.io/4504116800585728",
+				release: "np-main_dev@1.0.0",
+				integrations: [new Sentry.BrowserTracing()],
+
+				// We recommend adjusting this value in production, or using tracesSampler
+				// for finer control
+				tracesSampleRate: 1.0,
+			});
+		</script>
+	<?php endif; ?>
+        
+
+</head>
+
+=====================================
+подключение Sentry на ОП
+<head>
+
+  <!-- End Google Tag Manager -->
+
+  <!-- Sentry -->
+  <?php /* add sentry for prod only https://edu.nuzhnapomosh.ru/ */
+  if ((strpos($_SERVER['HTTP_HOST'], '.local') === false) ||
+    (strpos($_SERVER['HTTP_HOST'], 'staging') === false)
+  ): ?>
+    <script
+      src="https://browser.sentry-cdn.com/7.15.0/bundle.tracing.min.js"
+      integrity="sha384-skDdPkdiECE8otf9rbWXqVqnroCJqPpFKjcjwdnnHD03cyVgxJxW9nJKq7uFEpld"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      Sentry.init({
+        dsn: "https://2ec7e18c247d4a1e8e92f4a86319927c@o55232.ingest.sentry.io/4504116800585728",
+        release: "np-main_dev@1.0.0",
+        integrations: [new Sentry.BrowserTracing()],
+
+        // We recommend adjusting this value in production, or using tracesSampler
+        // for finer control
+        tracesSampleRate: 1.0,
+      });
+    </script>
+  <?php endif; ?>
+
+</head>

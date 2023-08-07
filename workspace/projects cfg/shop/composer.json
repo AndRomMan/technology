@@ -1,0 +1,30 @@
+{
+    "name": "npsh/shop",
+    "description": "Интернет-магазин Такие дела",
+    "type": "project",
+    "homepage": "https://shop.takiedela.ru/",
+    "require": {
+      "joseluisq/gimage": "^3.0",
+      "yandex-money/yandex-checkout-sdk-php": "^1.6",
+      "npsh/php-amqp": "^3.1",
+      "nuzhnapomosh/auth-client": "1.*"
+    },
+    "autoload": {
+      "psr-4": {
+        "Npsh\\TakieDela\\": "src/"
+      },
+      "classmap": [
+        "src"
+      ]
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@git.nuzhnapomosh.ru:lib/php-amqp.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@git.nuzhnapomosh.ru:authentication/auth-client.git"
+        }
+      ]
+}

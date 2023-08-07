@@ -1,0 +1,4 @@
+Проверка на то, что jQuery загружен
+if ( typeof jQuery !== "undefined" ) {
+  console.log( "jQuery загружен" );
+}

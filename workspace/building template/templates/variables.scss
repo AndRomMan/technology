@@ -1,0 +1,52 @@
+// background for retina display
+$retina-dppx: 1.5dppx;
+$retina-dpi: 144dpi;
+// (min-resolution: $retina-dpi),
+// (min-resolution: $retina-dppx)
+
+// Typography
+//---------------------------------
+$font--main: "Montserrat", "Arial", sans-serif;
+
+
+// базовое, то, что уже 576px держать ширину auto
+$extrasmall_width: 320px;
+// =============================
+// до min=576px держать ширину 540
+$small_breakpoint: 576px;
+$small_width: 540px;
+
+// =============================
+// до min=768px держать ширину 720
+$medium_breakpoint: 768px;
+$medium_width: 720px;
+
+// =============================
+// до min=992px держать ширину 960
+$large_breakpoint: 992px;
+$large_width: 960px;
+
+// =============================
+// до min=1200px держать ширину 1140
+$extralarge_breakpoint: 1200px;
+$extralarge_width: 1140px;
+
+// -------------------------- basic colors
+
+// -------------------------- font
+$font_dark: #000000;
+$font_size: 16px;
+
+// -------------------------- border colors
+
+// -------------------------- background colors
+
+
+// font($size, $line_height, $weight, $color)
+
+// -------------------------- outline colors
+$outline-color: rgb(13, 59, 1);
+
+// .button:hover,
+// .button:focus,
+// .button:active

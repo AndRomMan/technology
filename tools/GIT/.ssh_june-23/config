@@ -1,0 +1,5 @@
+Host github.com
+   HostName github.com
+   User AndRomMan 
+   AddKeysToAgent yes
+   IdentityFile  ~/.ssh/id_rsa

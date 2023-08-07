@@ -1,0 +1,131 @@
+// https: //developer.mozilla.org/ru/docs/Web/API/Console
+{
+  "Console log": {
+    "prefix": "cl",
+    "scope": "javascript, typescript",
+    "body": [
+      "console.log($1",
+    ],
+    "description": "Log output to console"
+  },
+  "Console log short": {
+    "prefix": "clo",
+    "scope": "javascript, typescript",
+    "body": [
+      "console.log($1);"
+    ],
+    "description": "Log output to console"
+  },
+  "Console error": {
+    "prefix": "cle",
+    "scope": "javascript, typescript",
+    "body": [
+      "console.error($1);"
+    ],
+    "description": "Log output to console"
+  },
+  "Console worning": {
+    "prefix": "clw",
+    "scope": "javascript, typescript",
+    "body": [
+      "console.warn($1);"
+    ],
+    "description": "Log output to console"
+  },
+  "Console info": {
+    "prefix": "cli",
+    "scope": "javascript, typescript",
+    "body": [
+      "console.info($1);"
+    ],
+    "description": "Log output to console"
+  },
+  "Console table": {
+    "prefix": "clt",
+    "scope": "javascript, typescript",
+    "body": [
+      "console.table($1);"
+    ],
+    "description": "Log output to console"
+  },
+  "Console debug": {
+    "prefix": "cld",
+    "scope": "javascript, typescript",
+    "body": [
+      "console.debug($1);"
+    ],
+    "description": "Log output to console"
+  },
+  "Console assert": {
+    "prefix": "clasr",
+    "scope": "javascript, typescript",
+    "body": [
+      "console.assert($1, $2);"
+    ],
+    "description": "Log output to console"
+  },
+  "Console group": {
+    "prefix": "clg",
+    "scope": "javascript, typescript",
+    "body": [
+      "console.group($1);"
+    ],
+    "description": "Log output to console"
+  },
+  "Console collapsed group": {
+    "prefix": "clgc",
+    "scope": "javascript, typescript",
+    "body": [
+      "console.groupCollapsed($1);"
+    ],
+    "description": "Log output to console"
+  },
+  "Console group end": {
+    "prefix": "clgen",
+    "scope": "javascript, typescript",
+    "body": [
+      "console.groupEnd($1);"
+    ],
+    "description": "Log output to console"
+  },
+  "Console time": {
+    "prefix": "clti",
+    "scope": "javascript, typescript",
+    "body": [
+      "console.time($1);"
+    ],
+    "description": "Log output to console"
+  },
+  "Console time end": {
+    "prefix": "cltie",
+    "scope": "javascript, typescript",
+    "body": [
+      "console.timeEnd($1);"
+    ],
+    "description": "Log output to console"
+  },
+  "Console trace": {
+    "prefix": "cltr",
+    "scope": "javascript, typescript",
+    "body": [
+      "console.trace();"
+    ],
+    "description": "Log output to console"
+  },
+  "Console count": {
+    "prefix": "clc",
+    "scope": "javascript, typescript",
+    "body": [
+      "console.count($1);"
+    ],
+    "description": "Log output to console"
+  },
+  "Console dir": {
+    "prefix": "cldi",
+    "scope": "javascript, typescript",
+    "body": [
+      "console.dir($1);"
+    ],
+    "description": "Log output to console"
+  }
+}

@@ -1,0 +1,29 @@
+Многие библиотеки JavaScript упакованы в виде модулей CommonJS, которые можно установить с помощью npm.
+Rollup.js может включать такие скрипты в пакеты со следующими плагинами:
+npm install @rollup/plugin-node-resolve --save-dev // плагин для импорта из node_modules
+npm install @rollup/plugin-commonjs --save-dev //  обеспечивает поддержку подключения CommonJS-модулей
+
+Usefull plugins https://github.com/rollup/awesome
+npm i @rollup/plugin-eslint -D
+npm i rollup-plugin-postcss -D
+npm i rollup-plugin-terser -D
+
+
+// Rollup plugins
+import babel from 'rollup-plugin-babel';
+import eslint from 'rollup-plugin-eslint';
+import commonjs from 'rollup-plugin-commonjs';
+
+import resolve from 'rollup-plugin-node-resolve';
+import { nodeResolve as resolve } from '@rollup/plugin-node-resolve';
+
+import { terser } from 'rollup-plugin-terser';
+
+
+  // nodeResolve(), // подключение модулей node
+  // commonJs(), // подключение модулей commonjs
+  // postcss(), // подключение препроцессора postcss, а также стилей scss и less
+  // typeScript({tsconfig: "tsconfig.json"}), // подключение typescript
+  // sizeSnapshot(), // напишет в консоль размер бандла
+  // terser(), // минификатор совместимый с ES2015+, форк и наследник UglifyES
+  // visualizer() // анализатор бандла

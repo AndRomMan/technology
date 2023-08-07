@@ -1,0 +1,32 @@
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+
+  min-width: 320px;
+  // меньше 320px body не сжимаем
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+
+  background-color: $body_back;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+}

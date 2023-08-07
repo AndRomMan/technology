@@ -1,0 +1,46 @@
+webmaster@nuzhnapomosh.ru
+U!6Ak4umbSP25dZ
+
+====================================================================
+1 файл - head. twig
+
+  {# Метрики #}
+  {% include 'default/template/common/header_new/metrics/sentry.twig' %}
+
+====================================================================
+2 файл - sentry.twig
+<!-- Sentry логирование ошибок https://docs.sentry.io -->
+{# {% if 'smysl' in route or 'dev' in route %} #}
+<script src="https://cdn.ravenjs.com/3.26.4/raven.min.js"
+  crossorigin="anonymous"></script>
+
+<script>
+  Raven.config("https://85ce3785f8664111b2e07cb226f52fd0@o55232.ingest.sentry.io/6547492").install();
+</script>
+{# {% endif %} #}
+
+====================================================================
+3 файл - ready.js
+$(document).ready(function () {
+
+  console.log('Sentry init:  https://docs.sentry.io/platforms/javascript/');
+
+  if (window.location.host === 'smysl.shop') {
+    Sentry.init({
+      dsn: 'https://85ce3785f8664111b2e07cb226f52fd0@o55232.ingest.sentry.io/6547492',
+      integrations: [new BrowserTracing()],
+    });
+  }
+
+Запуск скрипта: npm run ...
+  "scripts": {
+    "editorconfig": "editorconfig-cli",
+    "stylelint": "stylelint \"source/sass/*.scss\" --syntax scss",
+    "test": "npm run editorconfig && npm run stylelint && eslint source/js/*.js",
+    "build": "gulp buildProject",
+    "start": "gulp startServer",
+    "checkJs": "eslint source/js/*.js",
+    "fixJs": "eslint --fix source/js/*.js",
+    "checkHtml": "htmlhint source/**/*.html",
+    "checkCss": "stylelint source/sass/**/*.scss --syntax scss",
+    "delNpmModules": "rimraf node_modules"

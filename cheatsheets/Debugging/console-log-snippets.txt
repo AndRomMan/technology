@@ -1,0 +1,32 @@
+  Console log: cl
+
+  Console log: clo
+    
+  Console error: cle
+    	
+  Console worning: clw
+    
+  Console info: cli
+    
+  Console table: clt
+    
+  Console debug: cld
+    
+  Console assert: clasr
+      
+  Console group: clg
+  
+  Console collapsed group: clgc
+  
+  Console group end: clgen
+  
+  Console time: clti
+  
+  Console time end: cltie
+  
+  Console trace: cltr
+  
+  Console count: clc
+  
+  Console dir: cldi
+  

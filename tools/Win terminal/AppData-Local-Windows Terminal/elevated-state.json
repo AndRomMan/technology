@@ -1,0 +1,33 @@
+{
+	"persistedWindowLayouts" : 
+	[
+		{
+			"initialPosition" : "2560,-9",
+			"initialSize" : 
+			{
+				"height" : 865.5999755859375,
+				"width" : 1536.800048828125
+			},
+			"launchMode" : "maximized",
+			"tabLayout" : 
+			[
+				{
+					"action" : "newTab",
+					"commandline" : "\"C:\\Program Files\\PowerShell\\7\\pwsh.exe\"",
+					"profile" : "PowerShell 7",
+					"startingDirectory" : "C:\\Users\\ronin",
+					"suppressApplicationTitle" : false,
+					"tabTitle" : "PowerShell 7"
+				},
+				{
+					"action" : "newTab",
+					"commandline" : "ubuntu.exe",
+					"profile" : "Ubuntu",
+					"startingDirectory" : null,
+					"suppressApplicationTitle" : false,
+					"tabTitle" : "Ubuntu"
+				}
+			]
+		}
+	]
+}

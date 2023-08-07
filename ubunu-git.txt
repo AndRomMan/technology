@@ -1,0 +1,7 @@
+demromdeveloper@gmail.com
+20gitromhub15
+
+git config --global user.name "AndRomMan"
+
+
+git config --global user.email demromdeveloper@gmail.com

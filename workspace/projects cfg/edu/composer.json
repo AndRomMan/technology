@@ -1,0 +1,41 @@
+{
+    "name": "nuzhnapomosh/education",
+    "type": "project",
+    "description": "",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@git.nuzhnapomosh.ru:lib/php-amqp.git"
+        },
+        {
+            "type": "vcs",
+            "url": "git@git.nuzhnapomosh.ru:authentication/auth-client.git"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "ext-curl": "*",
+        "ext-fileinfo": "*",
+        "ext-json": "*",
+        "ext-mysqli": "*",
+        "ext-simplexml": "*",
+        "npsh/php-amqp": "^3.1",
+        "nuzhnapomosh/auth-client": "^1.0",
+        "guzzlehttp/guzzle": "^6.5|^7.2",
+        "google/apiclient": "^2.7",
+        "symfony/dom-crawler": "^5.2",
+        "symfony/css-selector": "^5.2"
+	}
+    ,
+    "require-dev": {
+        "roave/security-advisories": "dev-latest"
+    },
+    "autoload": {
+        "psr-4": {
+            "Npsh\\Edu\\": "src/"
+        },
+        "classmap": [
+            "src"
+        ]
+    }
+}

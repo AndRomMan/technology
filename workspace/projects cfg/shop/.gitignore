@@ -1,0 +1,55 @@
+.htaccess
+/config.php
+admin/config.php
+
+/system/log/error.log
+
+download/
+image/data/
+image/og/
+image/cache/
+image/catalog/
+system/cache/
+system/logs/
+storage/
+
+vendor
+composer.phar
+composer.lock
+
+# vQmod
+vqmod/logs/*
+vqmod/vqcache/*
+vqmod/checked.cache
+vqmod/mods.cache
+
+# Node
+node_modules
+package-lock.json
+
+.vscode/
+.idea/
+.env
+.npmrc
+
+# Yandex.Webmaster
+/yandex_d139219b03a61850.html
+/yandex_3832fddaec05bb0e.html
+/yandex_e1fe7da950eac7c1.html
+# Google
+/google2f7f15c87599636a.html
+
+technology/
+source/
+.eslintrc.json
+.eslintignore
+.prettierrc.json
+.editorconfig
+.csscomb.json
+.editorconfig
+.htmlhintrc
+.prettierrc.json
+.stylelintignore
+.stylelintrc.json
+package-update.txt
+

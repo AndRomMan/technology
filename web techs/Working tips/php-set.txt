@@ -1,0 +1,7 @@
+C:\OpenServer\modules\php\PHP_8.0\php.exe -S localhost:8000 -t public/
+http://localhost:8000
+C:\OpenServer\modules\php\PHP_8.0\php.exe
+
+C:\OpenServer\modules\php\PHP_8.0\php.exe C:\OpenServer\composer.phar config
+
+-S localhost:8000 -t public/

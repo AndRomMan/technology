@@ -1,0 +1,93 @@
+@mixin font--futura($size, $line_height, $weight, $color) {
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line_height;
+  font-family: $font--segoe;
+  color: $color;
+}
+
+@mixin retina {
+  @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+    @content;
+  }
+}
+
+//   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
+//   background-image: url("../img/advantage-leaf@2x.png");
+// }
+
+// < 1200
+@mixin viewport--xl {
+  @media (max-width: $viewport--xl - 1) {
+    @content;
+  }
+}
+
+// < 1024
+@mixin viewport--lg-1 {
+  @media (max-width: $viewport--lg-1 - 1) {
+    @content;
+  }
+}
+
+// < 992
+@mixin viewport--lg {
+  @media (max-width: $viewport--lg - 1) {
+    @content;
+  }
+}
+
+// < 768
+@mixin viewport--md {
+  @media (max-width: $viewport--md - 1) {
+    @content;
+  }
+}
+
+// < 576
+@mixin viewport--sm {
+  @media (max-width: $viewport--sm - 1) {
+    @content;
+  }
+}
+
+@mixin button-hover-focus {
+  outline: 2px solid $white;
+  outline-offset: -4px;
+}
+
+@mixin summary-customization {
+  display: block;
+
+  cursor: pointer;
+
+  &::-webkit-details-marker {
+    display: none;
+  }
+}
+
+@mixin box-pseudo {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: -36px;
+
+  display: block;
+  width: 20px;
+  height: 20px;
+
+  background-color: $white;
+  cursor: pointer;
+}
+
+@mixin focus-line-pseudo {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+
+  display: block;
+  width: 100%;
+  height: 2px;
+
+  background-color: $acadia;
+}

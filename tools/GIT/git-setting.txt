@@ -1,0 +1,4 @@
+C:\Users\romman\.bashrc
+C:\Users\romman\.gitconfig
+
+# alias -p вывести список aliases

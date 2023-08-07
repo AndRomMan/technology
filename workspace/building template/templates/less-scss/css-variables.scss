@@ -1,0 +1,32 @@
+:root {
+  --np-red: #e65a39;
+  --np-red-hover: #d13924;
+  --np-orange: #ee902b;
+  --np-black: #302f2d;
+  --np-ultra-black: #000;
+  --np-gray: #999999;
+  --np-grayish: #a9a9a8;
+  --np-light: #e6e6e6;
+  --np-very-lighten-gray: #d0cfcc;
+  --np-very-light: #F5F5F5;
+  --np-off-white: #fafafa;
+  --np-white: #ffffff;
+  --np-border: #545351;
+
+  --np-social-vk: #4680C2;
+  --np-social-fb: #1877F2;
+  --np-social-tw: #1DA1F2;
+  --np-social-ok: #EE8208;
+  --np-social-tg: #2AABEE;
+  --np-social-wp: #25D366;
+
+  --np-font-base-font: 'Helvetica', 'Arial', sans-serif;
+  --np-font-leksa: 'Leksa', 'Georgia', serif;
+  --np-font-futurabook: 'FuturaBook', var(--np-font-base-font);
+  --np-font-futurademi: 'FuturaDemi', var(--np-font-base-font);
+  --np-font-romanovsky: 'RomanovskyRegular', var(--np-font-leksa);
+
+  --np-transition: .1s ease-in;
+  --np-transition-slow: .2s ease-in;
+  --np-transition-middle: 300ms;
+}

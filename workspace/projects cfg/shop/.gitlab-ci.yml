@@ -1,0 +1,21 @@
+deploy_migration:
+  stage: deploy
+  only:
+    - master
+  script:
+    - cd /home/shop/www
+    - git pull git@git.nuzhnapomosh.ru:shop/main.git master
+    - npm ci
+    - find node_modules  -exec touch -m {} \;
+
+deploy_dev:
+  stage: deploy
+  only:
+    - pre-master
+  script:
+    - cd /home/shop/www.dev
+    - git pull git@git.nuzhnapomosh.ru:shop/main.git pre-master
+    - npm ci
+    - find node_modules  -exec touch -m {} \;
+
+

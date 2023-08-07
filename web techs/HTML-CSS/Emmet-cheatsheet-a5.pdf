@@ -1,0 +1,46 @@
+|CTAG_1625747168_4949671_8628_0
+|d ../..
+|d OpenServer/domains
+|s
+|d edu
+|d OpenServer/domains
+|d ../..
+|d OpenServer/domains
+|d edu
+git branch
+|it sw -
+git sw -
+wp
+|d ../..
+|s
+|d OpenServer/domains
+cd edu
+ls
+edu.npmsh.loc
+cd edu.npmsh.loc
+|t
+|it st
+git remote
+git branch remote
+|it st
+git logs -4
+|it st
+cd ../..
+cd OpenServer/domains
+cd OpenServer/domains/edu.nmpsh.local
+cd OpenServer/domains/edu.npmsh.local
+cd edu.npmsh.local
+|it st
+git logs
+|it st
+git logs -3
+node --version
+npm --version
+npx --version
+npm install --global gulp-cli
+clink autorun --help
+clink -v
+clink --version
+git -v
+st
+git st

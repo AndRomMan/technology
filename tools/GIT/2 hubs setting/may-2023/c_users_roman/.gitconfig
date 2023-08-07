@@ -1,0 +1,39 @@
+[user]
+	name = AndRomMan
+	email = demromdeveloper@gmail.com
+	signingKey = ""
+[core]
+	autocrlf = input
+	safecrlf = warn
+	quotepath = off
+	excludesfile = .gitignore
+	editor = 'C:/TCPU73/Programm/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin
+	longpaths = true
+[credential]
+	helper = manager
+[alias]
+	cat = cat-file
+	res = restore
+	sw = switch
+	cho = checkout
+	com = commit
+	st = status
+	br = branch
+	logs = log --pretty=format:'%C(yellow)%h%Creset %C(blue)%d%Creset %s' --graph  --topo-order
+	type = cat-file -t
+	dump = cat-file -p
+[winUpdater]
+	recentlySeenVersion =  2.41.0.windows.1
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[init]
+	defaultBranch = master
+[gpg]
+	program = gpg
+[commit]
+	gpgSign = false
+[tag]
+	forceSignAnnotated = false

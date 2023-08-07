@@ -1,0 +1,56 @@
+{
+  "name": "edu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "\u001b[D",
+  "dependencies": {
+    "@utils/button": "^0.1.17",
+    "@utils/categories": "0.0.5-alpha.0",
+    "@utils/cookie-notice": "0.0.33",
+    "@utils/css-variables": "0.0.71",
+    "@utils/donate-form": "0.0.219-alpha.0",
+    "@utils/form-checkbox": "0.0.19",
+    "@utils/form-fieldset": "0.0.45",
+    "@utils/form-input": "0.0.27",
+    "@utils/header": "0.0.124",
+    "@utils/pagination": "0.0.31-alpha.0",
+    "@utils/tooltip": "0.0.83",
+    "@utils/typography": "0.0.74",
+    "i": "^0.3.7",
+    "npm": "^8.18.0",
+    "penthouse": "^2.3.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.23.0",
+    "eslint-config-htmlacademy": "^6.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "gulp": "latest",
+    "gulp-clean-css": "latest",
+    "gulp-concat": "latest",
+    "gulp-cssnano": "latest",
+    "gulp-htmlhint": "^4.0.2",
+    "gulp-less": "latest",
+    "gulp-rename": "latest",
+    "gulp-uglify-es": "latest",
+    "gulp-watch": "latest",
+    "htmlhint": "^1.1.4",
+    "linthtml-config-htmlacademy": "^1.0.3",
+    "merge-stream": "^2.0.0",
+    "prettier": "^2.7.1",
+    "stylelint": "^14.11.0",
+    "stylelint-config-htmlacademy": "^1.0.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-recommended-scss": "^7.0.0",
+    "stylelint-scss": "^4.3.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.nuzhnapomosh.ru:td/edu.git"
+  },
+  "author": "",
+  "license": "ISC"
+}

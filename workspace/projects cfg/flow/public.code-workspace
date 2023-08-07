@@ -1,0 +1,35 @@
+{
+  "folders": [
+    {
+      "path": "public\\payment-upgrade"
+    }
+  ],
+  "settings": {
+    "workbench.colorCustomizations": {
+      "activityBar.activeBackground": "#58d8eb",
+      "activityBar.activeBorder": "#e738d0",
+      "activityBar.background": "#58d8eb",
+      "activityBar.foreground": "#15202b",
+      "activityBar.inactiveForeground": "#15202b99",
+      "activityBarBadge.background": "#e738d0",
+      "activityBarBadge.foreground": "#e7e7e7",
+      "editorGroup.border": "#58d8eb",
+      "panel.border": "#58d8eb",
+      "sash.hoverBorder": "#58d8eb",
+      "sideBar.border": "#58d8eb",
+      "statusBar.background": "#2bcde5",
+      "statusBar.foreground": "#15202b",
+      "statusBarItem.hoverBackground": "#18afc5",
+      "statusBarItem.remoteBackground": "#2bcde5",
+      "statusBarItem.remoteForeground": "#15202b",
+      "titleBar.activeBackground": "#2bcde5",
+      "titleBar.activeForeground": "#15202b",
+      "titleBar.inactiveBackground": "#2bcde599",
+      "titleBar.inactiveForeground": "#15202b99"
+    },
+    "peacock.color": "#2bcde5",
+    "cSpell.words": [
+      "nuzhnapomosh"
+    ]
+  }
+}

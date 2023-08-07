@@ -1,0 +1,22 @@
+deploy_production:
+  stage: deploy
+  only:
+    - master
+  tags:
+    - edu
+  script:
+    - cd /home/edu/project
+    - git pull git@git.nuzhnapomosh.ru:td/edu.git master
+    - composer install --no-interaction --ansi --no-suggest --prefer-dist
+
+deploy_staging:
+  stage: deploy
+  only:
+    - staging
+  tags:
+    - edu
+  script:
+    - cd /home/edu/staging
+    - git pull origin staging
+    - git checkout staging
+    - composer install --no-interaction --ansi --no-suggest --prefer-dist

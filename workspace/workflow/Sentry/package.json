@@ -1,0 +1,7 @@
+  "dependencies": {
+    "@sentry/browser": "^7.15.0",
+    "@sentry/tracing": "^7.15.0",
+   },
+   "scripts": {
+    "sentry": "npx rollup -c",
+  },

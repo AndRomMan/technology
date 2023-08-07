@@ -1,0 +1,56 @@
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  border: 0;
+
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+}
+
+.visually-hidden:not(:focus):not(:active) {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  border: 0;
+
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+}
+
+// FIXME del unused mixin ::after
+@mixin link-underline_after {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -$link-underline-shift;
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background-color: $link-underline;
+  }
+}
+
+@mixin link-underline_border {
+  padding-bottom: $link-underline-shift;
+
+  border-bottom: 1px solid $link-underline;
+}

@@ -1,0 +1,9 @@
+/.git
+/.vscode
+/.idea
+/.ssh
+node_modules
+wp-includes
+wp-admin
+src
+vendor

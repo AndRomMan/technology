@@ -1,0 +1,57 @@
+// ======================================= background for retina display
+@retina-dppx: 1.5dppx;
+@retina-dpi: 144dpi;
+
+
+// ======================================= d = desktop
+// from 1280 to upper edge
+@media-desktop-xl-bottom: 1280px;
+
+// 1020 - 1279
+@media-desktop-top: 1279px;
+@media-desktop-bottom: 1020px;
+
+// ======================================= t = tablet
+// 760 - 1019
+@media-tablet-top: 1019px;
+@media-tablet-bottom: 760px;
+
+// ======================================= tc = m = mobile
+// 600 - 759
+@media-mobile-top: 759px;
+@media-mobile-bottom: 600px;
+
+// lower edge up to 599
+@media-mobile-xm-top: 599px; // xm - mobile extra small
+
+// Компонент должен быть резиновым
+//  на ключевых точках:
+// 320 - 599
+
+// =======================================
+@container-desktop-xl: 960px; // 1280
+@container-desktop: 920px; // 1020
+@container-tablet: 690px; // 760
+// @container-mobile: 540px; // 599
+@container-flexible: 100%;
+
+
+// @media (min-width: @media-desktop-xl-bottom) {
+//   // 1280 - upper edge
+// }
+
+// @media (min-width: @media-desktop-bottom) and (max-width: @media-desktop-top) {
+//   // 1020 - 1279
+// }
+
+// @media (min-width: @media-tablet-bottom) and (max-width: @media-tablet-top) {
+//   // 760 - 1019
+// }
+
+// @media (min-width: @media-mobile-bottom) and (max-width: @media-mobile-top) {
+//   // 600 - 759
+// }
+
+// @media (max-width: @media-mobile-xm-top) {
+//   // lower edge - 599
+// }

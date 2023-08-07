@@ -1,0 +1,172 @@
+Установка Sentry
+npm install --save @sentry/browser @sentry/tracing
+
+npm install rollup -D
+
+Многие библиотеки JavaScript упакованы в виде модулей CommonJS, которые можно установить с помощью npm. Rollup.js может включать такие скрипты в пакеты со следующими плагинами:
+npm install @rollup/plugin-node-resolve --save-dev // плагин для импорта из node_modules
+npm install @rollup/plugin-commonjs --save-dev //  обеспечивает поддержку подключения CommonJS-модулей
+
+Usefull plugins https://github.com/rollup/awesome
+npm i @rollup/plugin-eslint -D
+npm i rollup-plugin-postcss -D
+npm i rollup-plugin-terser -D
+
+
+// ========== ESM ==========
+import { something } from './module.js';
+import { something as somethingElse } from './module.js';
+import { count, increment } from './incrementer.js';
+
+Import everything from the source module as an object
+import * as module from './module.js';
+
+Default Import
+import something from './module.js';
+
+Export a value that has been previously declared:
+const something = true;
+export { something };
+
+Rename on export:
+export { something as somethingElse };
+
+// ========== GULP integrating ==========
+const rollup = require('rollup');
+const rollupTypescript = require('@rollup/plugin-typescript');
+
+gulp.task('build', () => {
+  return rollup
+    .rollup({
+      input: './src/main.ts',
+      plugins: [rollupTypescript()]
+    })
+    .then(bundle => {
+      return bundle.write({
+        file: './dist/library.js',
+        format: 'umd',
+        name: 'library',
+        sourcemap: true
+      });
+    });
+});
+
+======================================
+Для создания выходных бандлов в формате IIFE
+format: 'iife'
+
+Исходная
+console.log("Hello, world!");
+
+Сборка
+(function () {
+	'use strict';
+	console.log("Hello, world!");
+}());
+======================================
+
+
+// Должен быть либо абсолютный путь:
+import user from "https://some-site.com/js/user.js"
+// ...Либо относительный:
+import user from "./user.js"
+
+
+// ========== javascript producing module ==========
+const terser = require('gulp-terser');
+const rollup = require('rollup');
+
+
+const source = 'source/';
+const build = 'public/' + currentProject;
+
+const path = {
+  scriptVendor: {
+    source: source + 'js/vendor/*.js',
+    build: build + 'js/',
+  },
+  script: {
+    source: source + 'js/**/*.js',
+    watch: source + 'js/**/*.js',
+    build: build + 'js/',
+  },
+  jsBundle: {
+    source: source + 'js/',
+    build: build + 'js/',
+    watchIndex: source + 'js/index.js',
+    watchModules: source + 'js/modules/**/*.js',
+  },
+};
+
+// ========== javascript producing module ==========
+function getJSbundle() {
+  return rollup
+    .rollup({
+      input: path.jsBundle.source + 'index.js',
+    })
+    .then((bundle) => {
+      return bundle.write({
+        file: path.jsBundle.source + 'bundle.js',
+        format: 'es',
+        // sourcemap: true,
+      });
+    });
+}
+
+function getMinJSandMap() {
+  return src(path.jsBundle.source + 'bundle.js')
+    .pipe(plumber())
+    .pipe(sourcemap.init())
+    .pipe(
+      terser({
+        ecma: 2015,
+        // ecma: 5, // specify one of: 5, 2015, 2016, etc.
+      })
+    )
+    .pipe(rename({suffix: '.min'}))
+    .pipe(sourcemap.write('.'))
+    .pipe(dest(path.jsBundle.build))
+    .pipe(browsersync.stream());
+}
+
+function getMinJS() {
+  return src(path.jsBundle.source + 'bundle.js')
+    .pipe(plumber())
+    .pipe(
+      terser({
+        ecma: 2015,
+        // ecma: 5, // specify one of: 5, 2015, 2016, etc.
+      })
+    )
+    .pipe(rename({suffix: '.min'}))
+    .pipe(dest(path.jsBundle.build))
+    .pipe(browsersync.stream());
+}
+
+
+
+
+Как добавить несколько разных точек сборки скриптов в rollupjs
+Там где export default добавляем массив [{.
+Итоговый вариант будет таким:
+
+// rollup.config.js
+import json from '@rollup/plugin-json';
+import { terser } from 'rollup-plugin-terser';
+
+export default {
+  input: 'src/main.js',
+  output: [
+    {
+      file: 'bundle.js',
+      format: 'cjs'
+    },
+    {
+      file: 'bundle.min.js',
+      format: 'iife',
+      name: 'version',
+      plugins: [terser()]
+    }
+  ],
+  plugins: [json()]
+};

@@ -1,0 +1,29 @@
+{
+  "SVG sprite": {
+    "scope": "html",
+    "prefix": "svg",
+    "body": [
+      "<svg class=\"$1\" width=\"$2\" height=\"$3\" role=\"img\">",
+      "<use xlink:href=\"#$4\"></use>",
+      "</svg>"
+    ],
+    "description": "Using some svg-sprite"
+  },
+  "Picture": {
+    "scope": "html",
+    "prefix": "pict",
+    "body": [
+      "<picture>",
+      "<!-- 1х: 1366px; 2x: 2732px -->",
+      "<source type=\"image/webp\" media=\"(min-width: 1024px)\" srcset=\"img/@1x.webp 1x, img/@2x.webp 2x\">",
+      "<!-- 1х: 768px; 2x: 1536px -->",
+      "<source type=\"image/webp\" media=\"(min-width: 768px)\" srcset=\"img/@1x.webp 1x, img/@2x.webp 2x\">",
+      "<!-- 1х: 320px; 2x: 640px -->",
+      "<source type=\"image/webp\" srcset=\"img/@1x.webp 1x, img/@2x.webp 2x\">",
+      "<!-- 1х: 1366px; 2x: 2732px -->",
+      "<img src=\"img/@1x.jpg\" srcset=\"img/@2x.jpg 2x\" width=\"\" height=\"\" alt=\"\">",
+      "</picture>"
+    ],
+    "description": "Using a tag <picture> for retinisation"
+  },
+}
