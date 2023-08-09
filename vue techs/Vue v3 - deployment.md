@@ -1,4 +1,4 @@
-# Vue — project deployment
+# Vue.js v3 — project deployment
 
 [TOC]
 
